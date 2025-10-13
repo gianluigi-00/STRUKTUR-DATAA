@@ -1,4 +1,4 @@
-# <h1 align="center">Laporan Praktikum Modul 2 <br> Pengenalan CPP Part 2</h1>
+# <h1 align="center">Laporan Praktikum Modul 2 <br> Pengenalan C++ Part 2</h1>
 <p align="center">GIANLUIGI ANDRAES PUTRA BUTARBUTAR - 103112430245</p>
 
 ## Dasar Teori
@@ -103,12 +103,11 @@ Baik Call by Reference maupun Call by Pointer sama-sama memungkinkan fungsi untu
 
 ### Soal 1
 
-Aku mengerjakan program C++ yang berfungsi untuk menukar nilai dua buah variabel menggunakan fungsi dan pointer. Program ini menunjukkan bagaimana data dapat diubah melalui alamat memori (pointer), bukan hanya menyalin nilainya.
+Program ini dibuat untuk menukar nilai dari dua variabel menggunakan fungsi dan pointer. Proses penukaran dilakukan lewat alamat memori variabel, bukan lewat salinan nilainya, jadi nilai aslinya benar-benar berubah setelah fungsi dijalankan.
 
-Tujuan dari program ini adalah untuk memahami konsep pemanggilan fungsi menggunakan pointer (call by pointer) dalam C++.
+Tujuan dari program ini adalah supaya kita bisa paham cara kerja call by pointer di C++, yaitu cara memanggil fungsi dengan mengirim alamat variabel agar bisa diubah langsung dari dalam fungsi.
 
-Program ini menunjukkan bagaimana fungsi dapat mengubah nilai asli variabel melalui konsep call by pointer.
-Dalam C++, hal ini dilakukan dengan cara mengirimkan alamat variabel (&) ke fungsi dan menggunakan pointer (*) untuk mengakses serta memodifikasi nilainya.
+Dengan program ini, kita bisa lihat perbedaan antara penyalinan nilai biasa dan pengubahan nilai lewat alamat memori. Jadi, konsep pointer ini penting karena bikin fungsi bisa ngubah data asli tanpa harus ngembaliin nilai.
 
 ```cpp
 #include <iostream>
@@ -133,7 +132,7 @@ int main()
 ```
 
 > Output
-> ![Screenshot bagian x](output/guided1.png)
+> ![Screenshot bagian x](Output/guided.png)
 
 
 ### Soal 2
