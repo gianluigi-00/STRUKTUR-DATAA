@@ -99,7 +99,7 @@ Baik Call by Reference maupun Call by Pointer sama-sama memungkinkan fungsi untu
 
 
 
-## Guided
+## GUIDED
 
 ### Soal 1
 
@@ -137,11 +137,11 @@ int main()
 
 ### Soal 2
 
-Aku mengerjakan program C++ yang berfungsi untuk menukar nilai dua buah variabel menggunakan fungsi dengan parameter bertipe reference.
-Berbeda dengan program sebelumnya yang memakai pointer, program ini menggunakan konsep call by reference, di mana variabel asli langsung “direferensikan” ke parameter fungsi tanpa perlu menggunakan tanda & saat pemanggilan.
+Program ini dibuat untuk menukar nilai dua variabel dengan menggunakan fungsi yang parameternya bertipe reference. Berbeda dengan penggunaan pointer, program ini memakai konsep call by reference, di mana variabel yang dikirim ke fungsi tidak perlu menggunakan tanda & saat pemanggilan. Fungsi langsung bekerja pada variabel aslinya tanpa membuat salinan nilai.
 
-Singkatnya program ini menggunakan konsep call by reference, di mana variabel yang dikirim ke fungsi tidak disalin, tetapi langsung direferensikan.
-Dengan cara ini, perubahan nilai di dalam fungsi akan langsung berdampak pada variabel aslinya.
+Tujuan dari program ini adalah supaya bisa memahami cara kerja call by reference dalam C++, yaitu cara pemanggilan fungsi yang memungkinkan perubahan nilai variabel di dalam fungsi juga memengaruhi nilai variabel asli di luar fungsi. Konsep ini membuat program lebih sederhana dan efisien dibandingkan dengan penggunaan pointer.
+
+Singkatnya, program ini menunjukkan bahwa dengan menggunakan parameter reference (& di deklarasi fungsi), perubahan yang dilakukan di dalam fungsi tukar() langsung berdampak pada variabel a dan b di fungsi utama. Jadi, konsep call by reference ini bisa dianggap sebagai cara praktis untuk memodifikasi nilai asli tanpa perlu repot mengelola alamat memori secara manual.
 
 ```cpp
 #include <iostream>
@@ -165,9 +165,9 @@ int main()
 ```
 
 > Output
-> ![Screenshot bagian x](output/guided2.png)
+> ![Screenshot bagian x](Output/guided2.png)
 
-## Unguided
+## UNGUIDED
 
 ### Soal 1
 
@@ -228,15 +228,16 @@ int main() {
 
     return 0;
 }
-
 ```
 
 > Output
-> ![Screenshot bagian x](output/unguided1.png)
+> ![Screenshot bagian x](Output/unguided.png)
 
 > Penjelasan
 
-Program ini membuktikan bahwa operasi transpose berhasil dilakukan, yaitu dengan menukar baris menjadi kolom. Dengan teknik loop bersarang (for ganda), program dapat menyalin elemen dari matriks awal ke matriks hasil transpose dengan indeks yang ditukar.
+Program ini dibuat buat nampilin cara kerja transpose matriks di C++. Jadi awalnya ada matriks 3x3 yang isinya angka 1 sampai 9, lalu program bikin matriks baru buat nyimpen hasil transposenya.
+
+Proses transposenya simpel, yaitu nuker posisi baris jadi kolom dan kolom jadi baris. Itu dilakukan lewat dua perulangan for yang ngisi nilai transpose[j][i] = matriks[i][j];.
 
 1. Inisialisasi Matriks
    
@@ -248,7 +249,7 @@ int matriks[3][3] = {
 };
 ```
 
-Sesuai dengan soal, bahwa matriks awal di inisialisasi didalam kode, maka matriks awal ditentukan langsung di dalam kode program. Isinya adalah angka 1–9 dalam bentuk 3 baris dan 3 kolom.
+Di bagian ini, matriks awal langsung diisi nilainya di dalam kode. Matriks dibuat berukuran 3x3 dan berisi angka 1 sampai 9, sesuai dengan bentuk baris dan kolom yang diminta. Jadi, data matriksnya udah siap dipakai tanpa perlu input dari user.
 
 2. Membuat Matriks Transpose
    
@@ -256,7 +257,7 @@ Sesuai dengan soal, bahwa matriks awal di inisialisasi didalam kode, maka matrik
 int transpose[3][3];
 ```
 
-Setelah itu menyediakan array 2 dimensi kosong untuk menyimpan hasil transpose.
+Selanjutnya, program menyiapkan array dua dimensi baru dengan ukuran yang sama. Array ini fungsinya buat nyimpan hasil dari proses transpose nanti, di mana elemen baris dan kolom dari matriks awal akan ditukar posisinya.
 
 3. Logika Transpose
 
@@ -306,7 +307,7 @@ Hasil akhir adalah matriks baru yang merupakan cerminan diagonal utama dari matr
 
 4. Menampilkan Matriks Awal dan Transpose
 
-Menggunakan loop ganda untuk mencetak isi matriks baris per baris dan setelah itu, menampilkan kedua matriks agar terlihat perbedaan sebelum dan sesudah transpose.
+Terakhir, program menampilkan matriks awal dan matriks hasil transpose ke layar. Proses cetaknya juga pakai dua loop biar rapi per baris. Dengan cara ini, pengguna bisa langsung lihat perbedaan antara tampilan matriks sebelum dan sesudah ditranspose.
 
 ### Soal 2
 
@@ -342,11 +343,11 @@ int main() {
 ```
 
 > Output
-> ![Screenshot bagian x](output/unguided2.png)
+> ![Screenshot bagian x](Output/unguided2.png)
 
 > Penjelasan
 
-Program ini berfungsi untuk menguadratkan sebuah bilangan, tetapi dengan tujuan utama yaitu menunjukkan penerapan konsep Call by Reference dalam C++ melalui fungsi kuadratkan() yang mengubah nilai asli variabel menjadi hasil kuadratnya, serta membuktikan bahwa perubahan nilai terjadi secara langsung tanpa perlu nilai kembalian dari fungsi.
+Program ini berfungsi untuk mengubah nilai sebuah bilangan menjadi hasil kuadratnya menggunakan konsep Call by Reference di C++. Melalui prosedur kuadratkan(), program membuktikan bahwa nilai variabel bisa diubah langsung dari dalam fungsi tanpa perlu mengembalikan nilai, karena yang dikirim ke fungsi bukan salinannya, melainkan referensinya.
 
 1. Prosedur kuadratkan
 
@@ -356,9 +357,7 @@ void kuadratkan(int &x) {
 }
 ```
 
-Prosedur ini menerima parameter dengan tanda & yang artinya adalah call by reference. Call by reference berarti prosedur tidak membuat salinan variabel baru, tetapi langsung mengacu ke alamat memori variabel asli.
-
-Pada code operasi _x = x * x;_ code akan langsung mengubah nilai asli variabel yang dipanggil di main().
+Pada bagian ini, tanda & setelah tipe data int menunjukkan bahwa parameter x dikirim secara referensi, bukan salinan. Artinya, fungsi bekerja langsung pada variabel asli yang ada di main(). Saat kode x = x * x; dijalankan, nilai asli variabel tersebut otomatis berubah menjadi hasil kuadrat dari nilai sebelumnya. Jadi, fungsi ini tidak perlu mengembalikan nilai apa pun karena perubahan sudah terjadi langsung pada variabel aslinya.
 
 2. Fungsi main()
 
@@ -368,19 +367,19 @@ cout << "Masukkan sebuah bilangan: ";
 cin >> angka;
 ```
 
-   Di dalam fungsi main(), pertama program akan mengeluarakan perintah kepada user menggunakan fungsi cout, setelah itu user memasukkan sebuah bilangan bulat ke variabel angka.
+Di bagian main(), pengguna diminta memasukkan sebuah bilangan bulat ke dalam variabel angka. Nilai awal ini akan ditampilkan terlebih dahulu sebelum diproses oleh prosedur kuadratkan().
 
 ```cpp
 kuadratkan(angka);
 ```
 
-Setelah user melakukan input, program masuk ke pemanggilan prosedur menggunakan call by reference. Variabel angka langsung berubah nilainya menjadi kuadrat dari bilangan semula.
+Pemanggilan prosedur di atas menunjukkan penerapan call by reference. Setelah fungsi dijalankan, nilai angka di main() langsung berubah karena yang dikirim ke fungsi bukan nilainya, tapi alamat referensinya.
 
 ```cpp
 cout << "Nilai setelah dipanggil prosedur kuadratkan: " << angka << endl;
 ```
 
-Setelah proses prosedur telah selesai, program menampilkan nilai angka, dimana angka sudah berubah menjadi kuadrat.
+Akhirnya, program menampilkan nilai hasil kuadrat yang sudah diubah langsung dari dalam fungsi. Dari sini bisa dilihat bahwa konsep call by reference memungkinkan perubahan nilai variabel asli tanpa perlu ada proses pengembalian nilai.
 
 ## Referensi
 
