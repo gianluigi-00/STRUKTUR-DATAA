@@ -383,5 +383,6 @@ Akhirnya, program menampilkan nilai hasil kuadrat yang sudah diubah langsung dar
 
 ## Referensi
 
-1. https://en.wikipedia.org/wiki/Data_structure
-2. https://www.w3schools.com/cpp/cpp_arrays.asp
+1. [https://en.wikipedia.org/wiki/Data_structure](https://www.tutorialspoint.com/cplusplus/cpp_function_call_by_reference.htm?)
+2. [https://www.w3schools.com/cpp/cpp_arrays.asp](https://algorit.ma/blog/array-adalah-2022/)
+3. https://stackoverflow.com/questions/48626602/how-call-by-reference-work-in-c?
